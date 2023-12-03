@@ -1,6 +1,6 @@
 ﻿class Program{
     static void Main(string[] args){
-        int[,] newArray = InitializeFilledAray2D(6,6);
+        int[,] newArray = InitializeFilledAray2D(6,25);
         PrintAray2D(newArray);
         int[] minRow = GetMinRow(newArray);
         Console.WriteLine($"Минимальная сумма: {SumRow(minRow)}");
@@ -44,7 +44,7 @@
 
     static int[] GetMinRow(int[,] array){
         int[] minRow = GetRow(array,0);
-        for(int i = 1; i < array.GetLength(1); i++){
+        for(int i = 1; i < array.GetLength(0); i++){
             int[] newRow = GetRow(array, i);
             if (SumRow(newRow) < SumRow(minRow)){
                 minRow = newRow;
